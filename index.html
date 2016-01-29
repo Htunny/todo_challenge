@@ -9,8 +9,50 @@
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="js/app.js"></script>
     <script src="js/toDoCheckListController.js"></script>
+    <link rel="stylesheet" type="text/css" href="js/stylesheet.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   </head>
 
   <body ng-controller="ToDoCheckListController as listCtrl">
+    <div class="col-sm-12 text-center" >
+      <h1> <i class="fa fa-check-square-o fa-6px"></i></a> <a class="title" href="file:///Users/andrewhtun/Documents/Makers_projects/todo_challenge/index.html">To Do Checklist</a>  </h1>
+<div class="page-header">
+
+  <form class="form-horizontal text-center">
+  <input class="textbox" type="text" ng-model="listCtrl.inputText" ng-change="listCtrl.addItem()" ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }" placeholder="Enter an item">
+    <button class="btn btn-danger btn-md" ng-click="listCtrl.addItem()"><i class="fa fa-plus fa-4px"></i> ADD ITEM</button>
+  </form>
+</div>
+</div>
+<div class="content" style="overflow:scroll";>
+</div>
+
+<ul class="list-group">
+  <li ng-repeat="item in listCtrl.itemResult">
+    <!-- <img ng-src="{{user.avatar_url}}&s=50"> -->
+    <a>{{listCtrl.itemResult}}</a>
+  </li>
+</ul>
+
+<div id="footer">
+<div style="border-top: solid 1px #eee;">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-sm-12 text-center">
+
+        <p style="font-size: 13px" class="text-muted">To Do Checklist | © Copyright 2016, All Rights Reserved
+          <br>| To Do Checklist created by Andrew Htun, while at <a href="http://www.makersacademy.com/" target="_blank">Makers Academy</a> | <a href="https://github.com/Htunny" target="_blank">GitHub</a> | <a href="https://htunnycodes.wordpress.com/" target="_blank">Blog</a> |
+            <br>
+          <i class="fa fa-twitter-square fa-2x text-primary"></i>
+          <i class="fa fa-facebook-square fa-2x text-primary"></i>
+
+           </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
   </body>
   </html>

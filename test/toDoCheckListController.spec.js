@@ -8,7 +8,13 @@ describe('ToDoCheckListController', function() {
   }));
 
   it('initialises with an empty check list', function() {
-    expect(ctrl.input).toBeUndefined();
+    expect(ctrl.inputText).toBeUndefined();
   });
+
+  it('displays an list item', function() {
+    ctrl.inputText = 'learn angular';
+    ctrl.addItem();
+    expect(ctrl.itemResult.items).toEqual(items);
+  })
 
 });
