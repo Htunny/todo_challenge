@@ -17,20 +17,22 @@
     <div class="col-sm-12 text-center" >
       <h1> <i class="fa fa-check-square-o fa-6px"></i></a> <a class="title" href="file:///Users/andrewhtun/Documents/Makers_projects/todo_challenge/index.html">To Do Checklist</a>  </h1>
 <div class="page-header">
+  <h2>You have <span class="emphasis">{{listCtrl.getTotalList()}}</span> things to do</h2>
 
   <form class="form-horizontal text-center">
-  <input class="textbox" type="text" ng-model="listCtrl.inputText" ng-change="listCtrl.addItem()" ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }" placeholder="Enter an item">
-    <button class="btn btn-danger btn-md" ng-click="listCtrl.addItem()"><i class="fa fa-plus fa-4px"></i> ADD ITEM</button>
+  <input class="textbox" type="text" ng-model="listCtrl.actionname" ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }" placeholder="Enter an item...">
+    <button class="btn btn-success btn-md" ng-click="listCtrl.addItem(actionname)"><i class="fa fa-plus fa-4px"></i> ADD ITEM</button>
   </form>
 </div>
 </div>
-<div class="content" style="overflow:scroll";>
-</div>
 
-<ul class="list-group">
-  <li ng-repeat="item in listCtrl.itemResult">
-    <!-- <img ng-src="{{user.avatar_url}}&s=50"> -->
-    <a>{{listCtrl.itemResult}}</a>
+
+<ul class="list-group text-center">
+  <li class="inline-list" ng-repeat="action in listCtrl.actionList">
+    <input class="check" type="checkbox" ng-click="listCtrl.actionDone($index)">
+          <span class="number">{{$index + 1}}.</span>
+          <span class="completed-{{action.completed}}">{{action.action}}</span>
+          <button id="del" ng-click="listCtrl.deleteAction($index)">DELETE</button>
   </li>
 </ul>
 

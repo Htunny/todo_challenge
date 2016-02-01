@@ -23,6 +23,28 @@
     outline: none;
 }
 
+.btn-success {
+  width: 40%;
+  border: none;
+  height: 40px;
+  background:  #339933;
+  font-size: 2em;
+  font-family: 'Arimo', sans-serif;
+  color: white;
+  padding: 1px 0;
+}
+
+.textbox {
+  width: 60%;
+  height: 10px;
+  float: left;
+  border: none;
+  padding: 20px 0;
+  font-size: 2em;
+  font-family:'Arimo', sans-serif;
+  text-indent: 50px;
+}
+
 #footer {
   position: absolute;
   bottom: 0;

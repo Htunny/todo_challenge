@@ -2,11 +2,25 @@ todoList.controller('ToDoCheckListController', [function() {
 
   var self = this;
 
-  self.addItem = function(item) {
-    Add.query(self.inputText)
-     .then(function() {
-       self.itemResult = response.data;
-     });
+    self.actionList = [];
 
+    self.getTotalList = function () {
+    return self.actionList.length;
   };
+
+    self.addItem = function(actionname){
+      self.actionList.push({action: actionname, completed: false})
+    };
+
+    self.actionDone = function(actionnumber){
+      self.actionList[actionnumber].completed = !self.actionList[actionnumber].completed
+    }
+
+    self.deleteAction = function(actionnumber){
+      self.actionList.splice(actionnumber, 1)
+    }
+
+    self.clearList = function(){
+      self.taskList = [];
+    }
 }]);

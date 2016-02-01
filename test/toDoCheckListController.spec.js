@@ -13,8 +13,8 @@ describe('ToDoCheckListController', function() {
 
   it('displays an list item', function() {
     ctrl.inputText = 'learn angular';
-    ctrl.addItem();
-    expect(ctrl.itemResult.items).toEqual(items);
+    ctrl.addItem(action);
+    expect(ctrl.actionList).toEqual('learn angular');
   })
 
 });
